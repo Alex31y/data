@@ -38,15 +38,32 @@
 					</section>
 
 				<!-- One -->
-				<section id="one" class="wrapper style1 fullscreen fade-up">
-					<div id="grafico2">
-						<p>Scatterplot tra la variabile dipendente 'numCoveredLines' asse Y e variabile indipendente 'tloc' asse X sui progetti 'httprequest' e 'Activiti'</p>
-						<svg width="400" height="400" id="svg2"></svg> il progetto 'httprequest' mostra una discreta correlazione tra la variabile dipendente e indipendente
-						
-						<p>activiti prima e dopo la rimozione degli outliners</p>
+				<section id="one" class="wrapper style2 spotlights">
+					<p>Scatterplot tra la variabile dipendente 'numCoveredLines' asse Y e variabile indipendente 'tloc' asse X sui progetti 'httprequest' e 'Activiti'</p>
+					<section>
+						<svg width="400" height="400" id="svg2">  </svg>
+						<div class="content">
+							<div class="inner">
+								<p>Nelle istanze appartenenti al progetto 'httprequest' vi è una certa linearità tra variabile dipendente ed indipendente, anche se lievemente sporcata da alcuni outliners</p>
+							</div>
+						</div>
+					</section>
+					<section>
 						<svg width="400" height="400" id="svg3"></svg>
+						<div class="content">
+							<div class="inner">
+								<p>Nel progetto 'Activiti' vi è anche qui una correlazione lineare tra X e Y nelle istanze test unit. Tale correlazione è però nascosta da un forte rumore dovuto a specifiche istanze di test caratterizzate da un elevato coefficiente nella variabile dipendente 'numCoveredLines' </p>
+							</div>
+						</div>
+					</section>
+					<section>
 						<svg width="400" height="400" id="svg4"></svg>
-					</div>
+						<div class="content">
+							<div class="inner">
+								<p>Per cancellare il rumore e quindi evidenziare la linearità tra X e Y, è sufficiente rimuovere le istanze outliners dal dataset</p>
+							</div>
+						</div>
+					</section>
 				</section>
 
 		<!-- Scripts -->
