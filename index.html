@@ -32,10 +32,55 @@
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div id="grafico1">
 							<p>Distribuzione dei progetti presenti nel dataset</p>
-							<svg width="600" height="600" id="svg1"></svg>
+							<svg width="600" height="800" id="svg1"></svg>
 							
 						</div>
+						<h3 style="text-align:center">Pearson correlation coefficient per il calcolo della correlazione tra la variabile dipendente 'numCoveredLines' 
+							e alcune delle variabili indipendenti presenti nel dataset</h3>
+						<div class="inner">
+							<table>
+								<tr><td>Variabile</td><td>p value</td><td>esito probabilistico</td></tr>
+								<tr><td>tmcCabe</td><td>0.190</td><td>dependent</td></tr>
+								<tr><td>tloc</td><td>0.543</td><td>dependent</td></tr>
+								<tr><td>assertionRoulette</td><td>0.359</td><td>dependent</td></tr>
+								<tr><td>conditionalTestLogic</td><td>0.201</td><td>dependent</td></tr>
+								<tr><td>loc</td><td>0.135</td><td>dependent</td></tr>
+								<tr><td>ExecutionTime</td><td>0.266</td><td>dependent</td></tr>
+							</table>
+							<h3 style="text-align:center">Si evince che la maggioranza delle features descrittive delle istanze dei test case presenti nel dataset,
+								sono in qualche modo correlate (p value > 0.05) al corrispondente numbero di righe di codice coperte dal test case in questione</h3>
+						</div>
+						
 					</section>
+
+					<section class="wrapper style3 fade-up">
+						<div class="inner">
+						<h2 style="text-align:center">Al fine di predirre la variabile 'numCoveredLines' sono stati costruiti diversi modelli adottanto diverse tipologie di regressione.</h2>
+						<h3 style="text-align:center">Il risultato migliore è stato ottenuto con il Random Forest Regression con i seguenti risultati:</h3>
+							<table>
+								<tr><td>Progetto</td><td>Scarto assoluto medio</td><td>Percentuale del DS</td></tr>
+								<tr><td>logback</td><td>2.882</td><td>6.7%</td></tr>
+								<tr><td>orbit</td><td>4.152</td><td>0.3%</td></tr>
+								<tr><td>http-request</td><td>1.167</td><td>1.6%</td></tr>
+								<tr><td>Achilles</td><td>1.220</td><td>10.8%</td></tr>
+								<tr><td>okhttp</td><td>1.593</td><td>8.0%</td></tr>
+								<tr><td>elastic-job-lite</td><td>1.376</td><td>5.3%</td></tr>
+								<tr><td>incubator-dubbo</td><td>1.968</td><td>1.968</td></tr>
+								<tr><td>spring-boot</td><td>1.606</td><td>16.7%</td></tr>
+								<tr><td>wro4j</td><td>1.645</td><td>11.3%</td></tr>
+								<tr><td>Tutto il DS</td><td>2.31</td><td>100%</td></tr>
+							</table>
+						<h5>Dalla tabella si evince che lo scarto assoluto medio è inversamente proporzionale alla
+							percentuale del progetto nel dataset. In altre parole, maggiore è il numero dei singoli test case
+							associati al singolo progetto, maggiore sarà la capacità predittiva del modello nel determinare
+							la coverage associata ad un nuovo test case.
+							Ciononostante ci sono comunque degli outliers a questa supposizione, considerando i due
+							progetti ’http-request’ e ’Activiti’ la leggera differenza nella percentuale non giustifica la forte
+							differenza nello scarto assoluto medio dei rispettivi, ne consegue che per alcuni progetti è
+							più facile predirre la codecoverage rispetto che ad altri, ma perché?</h5>
+						</div>
+					</section>
+					
 
 				<!-- One -->
 				<section id="one" class="wrapper style2 spotlights">
